@@ -7,8 +7,4 @@ The Project has starter code. Lots of my code is Javascript code in app.js file 
     - When clicking an item from the navigation menu, the link is scrolling to the appropriate section.
 
 
-## Project Tree
-root___css___styles.css
-    |__js___app.js
-    |__index.html
-    |__README.md
+##
