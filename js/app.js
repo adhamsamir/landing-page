@@ -1,13 +1,27 @@
-const navlist=document.getElementById("navbar__list");
-const sections=Array.from(document.querySelectorAll("section"));
+const navigation = document.getElementById('navbar__list');
+const sections = document.querySelectorAll('section');
 
-function createListItem(){
-    for (sec of sections){
-        listItem=document.createElement("li");
-        
-        listItem.innerHtml=`<li> <a href = " # ${sec.id}" data-nav= " # ${sec.id}" class= "menu__link"> ${sec.dataset.nav}</a></li>`
-        navlist.appendChild(listItem);
-    }
-}
+//Navigation Menu
 
-createListItem();
+const buildMainNav = () => {
+  for (const section of sections) {
+      const ul = document.querySelector('ul#navbar__list');
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.textContent = section.getAttribute('data-nav');
+      a.setAttribute('class', 'menu__link');
+
+      a.href = `#${section.id}`;
+      li.appendChild(a);
+      ul.appendChild(li);
+  }
+
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  buildMainNav();
+});
+
+
+//Main function
+
