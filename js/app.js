@@ -25,3 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Main function
 
+function addActiveClass(section) {
+
+    const id = section.getAttribute('id');
+  
+    document.querySelector(`#${id}`).classList.add('your-active-class');
+  }
+
+  function removeActiveClass(section) {
+    const id = section.getAttribute('id');
+    document.querySelector(`#${id}`).classList.remove('your-active-class');
+  }
+
+  function makeActiveSection() {
+    sections.forEach((section) => {
+      
+      let elementOffset = section.getBoundingClientRect();
+      if (elementOffset.top <= 150 && elementOffset.bottom >= 150) {
+        addActiveClass(section);
+      } else {
+        removeActiveClass(section);
+      }
+    });
+  }
+ 
+  document.addEventListener('scroll', makeActiveSection);
